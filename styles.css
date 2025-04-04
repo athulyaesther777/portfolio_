@@ -6,7 +6,7 @@
 
 body {
     background: #000000; /* Black */
-    color: #C0C0C0; /* Silver */
+    color: #FFFFFF; /* White */
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
@@ -21,11 +21,11 @@ body {
     display: flex;
     justify-content: flex-end;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(192, 192, 192, 0.1); /* Silver shadow */
+    box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2); /* Gray shadow */
 }
 
 .menu a {
-    color: #008080; /* Teal */
+    color: #FFFF00; /* Yellow */
     text-decoration: none;
     margin: 10px 20px;
     font-size: 1.1rem;
@@ -34,7 +34,7 @@ body {
 }
 
 .menu a:hover {
-    color: #C0C0C0; /* Silver */
+    color: #808080; /* Gray */
 }
 
 /* Hero Section */
@@ -49,18 +49,18 @@ body {
 h1 {
     font-family: 'Lora', serif;
     font-size: 3.5rem;
-    color: #008080; /* Teal */
+    color: #FFFF00; /* Yellow */
 }
 
 h1 span {
-    color: #C0C0C0; /* Silver */
+    color: #FFFFFF; /* White */
 }
 
 .typing {
     font-size: 1.8rem;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #008080;
+    border-right: 2px solid #FFFF00; /* Yellow */
     width: 0;
     animation: typing 3s steps(40, end) infinite, blink .75s step-end infinite;
 }
@@ -72,7 +72,7 @@ h1 span {
 
 @keyframes blink {
     from, to { border-color: transparent; }
-    50% { border-color: #008080; }
+    50% { border-color: #FFFF00; }
 }
 
 /* Sections */
@@ -86,7 +86,7 @@ section {
 h2.section-title {
     font-family: 'Lora', serif;
     font-size: 2rem;
-    color: #008080; /* Teal */
+    color: #FFFF00; /* Yellow */
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -100,7 +100,7 @@ h2.section-title::before {
     left: 50%;
     transform: translateX(-50%);
     font-size: 5rem;
-    color: rgba(192, 192, 192, 0.05); /* Faint Silver */
+    color: rgba(128, 128, 128, 0.05); /* Faint Gray */
     font-weight: 700;
     z-index: -1;
     white-space: nowrap;
@@ -113,10 +113,10 @@ h2.section-title::before {
 }
 
 .content-box {
-    background: rgba(192, 192, 192, 0.1); /* Silver with opacity */
+    background: rgba(128, 128, 128, 0.1); /* Gray with opacity */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 128, 128, 0.2); /* Teal shadow */
+    box-shadow: 0 2px 5px rgba(255, 255, 0, 0.2); /* Yellow shadow */
 }
 
 /* Projects */
@@ -132,8 +132,8 @@ h2.section-title::before {
 }
 
 .project-box {
-    background: #008080; /* Teal */
-    color: #FFFFFF;
+    background: #808080; /* Gray */
+    color: #FFFFFF; /* White */
     padding: 15px;
     border-radius: 8px;
     text-align: left;
@@ -142,28 +142,45 @@ h2.section-title::before {
 
 .project-box:hover {
     transform: translateY(-5px);
+    background: #FFBF00; /* Amber */
+    color: #000000; /* Black */
 }
 
 /* Contact */
 #contact p {
     font-size: 1.1rem;
     line-height: 2;
-    color: #C0C0C0; /* Silver */
+    color: #FFFFFF; /* White */
 }
 
 #contact a {
-    color: #FFFFFF;
+    color: #FFFF00; /* Yellow */
     text-decoration: underline;
     transition: color 0.3s;
 }
 
 #contact a:hover {
-    color: #008080; /* Teal */
+    color: #808080; /* Gray */
 }
 
 .contact-icon {
     margin-right: 10px;
-    color: #008080; /* Teal */
+    color: #FFFF00; /* Yellow */
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+}
+
+footer a {
+    color: #FFBF00; /* Amber */
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #808080; /* Gray */
 }
 
 /* Responsive */
