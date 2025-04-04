@@ -63,16 +63,21 @@
       padding: 0.1cm ;
       z-index: 1000;
       display: flex;
-      justify-content: flex-end;
-      align-items: cen;
+      justify-content: center; /* Keeps it centered */
+      margin-left: -30px; /* Moves slightly to the left */
+      align-items: center;
+     
+      
       
       box-shadow: 0 2px 5px rgba(255, 191, 0, 0.3);
     }
+    
     .menu a {
       color: #FFBF00;
       text-decoration: none;
       margin: 20px 20px;
       font-size: 1.2rem;
+      white-space: nowrap;
     }
     section {
       padding: 100px 50px;
@@ -351,7 +356,26 @@ h2.section-title::before {
   <!-- Resume Section -->
 <section id="resume" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 40vh;">
   <!-- Centered Resume Title -->
+  
   <h1 style="color: white; font-size: 2.5rem; margin-bottom: 40px;">RESUME</h1>
+  <!-- Download Resume Button -->
+    <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
+      <a href="resume.pdf" download style="
+        display: inline-block;
+        background-color: #FFBF00;
+        color: black;
+        padding: 6px 20px;
+        text-decoration: none;
+        border-radius: 30px;  /* oval shape */
+        font-weight: bold;
+        font-size: 0.9rem;
+        box-shadow: 2px 2px 5px rgba(255, 191, 0, 0.6);
+        transition: background-color 0.3s ease;">
+        Download Resume
+      </a>
+    </div>
+
+  
 
   <!-- Flex Container for Experience and Skills -->
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; width: 100%; max-width: 1200px;">
@@ -526,6 +550,8 @@ h2.section-title::before {
 </head>
 <body>
 
+ <section id="contact" class="contact me">
+
     <div class="contact-container">
         <h2 class="contact-heading">Contact Me</h2>
         <p class="contact-subheading">Below are the details to reach out to me!</p>
@@ -566,7 +592,7 @@ h2.section-title::before {
             </div>
         </div>
     </div>
-
+ </section>
 </body>
 </html>
 
