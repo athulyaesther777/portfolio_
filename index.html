@@ -5,68 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athulya Esther | AI Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="menu">
+    <div class="menu">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#resume">Resume</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-    </nav>
+    </div>
 
-    <section class="hero" id="home">
-        <h1 class="hero-title">Athulya Esther</h1>
-        <p class="hero-subtitle">AI Engineer | PY-AI HUB</p>
-        <a href="#contact" class="cta-btn">Contact Me</a>
-    </section>
+    <div class="container" id="home">
+        <h1>I'm <span>Athulya Esther</span></h1>
+        <p class="typing">AI Engineer | PY-AI HUB</p>
+    </div>
 
-    <section class="about" id="about">
-        <h2>About</h2>
-        <p>AI Engineer specializing in Machine Learning, Deep Learning, NLP, and Data Science. Skilled in TensorFlow, PyTorch, and OpenAI API. Passionate about innovative AI solutions.</p>
-    </section>
-
-    <section class="resume" id="resume">
-        <div class="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">AI Intern, ATEES Global <span>Dec 2024 – Present</span></div>
-                <div class="timeline-item">Python Intern, TECHPLEMENT <span>Sep 2024 - Oct 2024</span></div>
-                <div class="timeline-item">AI Research Intern, ASIMOV ROBOTICS <span>Feb 2024 - Apr 2024</span></div>
-                <div class="timeline-item">Freelancer, AI Engineer <span>Nov 2023 - Present</span></div>
-            </div>
+    <section id="about">
+        <div class="about">
+            <h2 class="section-title" data-text="ABOUT">About Me</h2>
+            <p>AI Engineer and Python Developer specializing in Machine Learning, Deep Learning, NLP, and Data Science. Skilled in TensorFlow, PyTorch, OpenAI API, and LangChain. Passionate about innovative AI solutions.</p>
         </div>
         <div class="education">
-            <h2>Education</h2>
-            <p>B.Tech in CSE, APJ Abdul Kalam Technological University, Kerala <span>May 2024 | CGPA: 7.02</span></p>
-        </div>
-        <div class="certifications">
-            <h2>Certifications</h2>
-            <div class="cert-grid">
-                <div class="cert-card">Google WOW Hackathon - Top 30</div>
-                <div class="cert-card">Udemy: 100 Days of Code | 2024</div>
-                <div class="cert-card">Avodha: Python and Django | 2024</div>
+            <h2 class="section-title" data-text="EDUCATION">Education</h2>
+            <div class="content-box">
+                <strong>B.Tech in Computer Science and Engineering</strong><br>
+                APJ Abdul Kalam Technological University, Kerala<br>
+                May 2024 | CGPA: 7.02
             </div>
         </div>
     </section>
 
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">AI Healthcare Chatbot</div>
-            <div class="project-card">VR Mechanical Laboratory</div>
-            <div class="project-card">Sentiment Analysis</div>
-            <div class="project-card">Vehicle Detection</div>
+    <section id="resume">
+        <div class="experience">
+            <h2 class="section-title" data-text="EXPERIENCE">Experience</h2>
+            <div class="content-box">
+                <p><strong>ATEES Global</strong>, AI Intern (Dec 2024 – Present)</p>
+                <p><strong>TECHPLEMENT</strong>, Python Intern (Sep 2024 - Oct 2024)</p>
+                <p><strong>ASIMOV ROBOTICS</strong>, AI Research Intern (Feb 2024 - Apr 2024)</p>
+                <p><strong>Freelancer</strong>, AI Engineer (Nov 2023 - Present)</p>
+            </div>
+        </div>
+        <div class="certifications">
+            <h2 class="section-title" data-text="CERTIFICATIONS">Certifications</h2>
+            <div class="content-box">
+                <p>Google WOW Hackathon - Top 30 Teams</p>
+                <p>Udemy: 100 Days of Code (2024)</p>
+                <p>Avodha: Python and Django (2024)</p>
+            </div>
         </div>
     </section>
 
-    <footer class="contact" id="contact">
-        <h2>Contact</h2>
-        <p><a href="mailto:athulyaestherlucky75@gmail.com">athulyaestherlucky75@gmail.com</a></p>
-        <p><a href="https://linkedin.com/in/athulya-b-vijay-b65740220/">LinkedIn</a> | <a href="https://github.com/athulyaesther777">GitHub</a></p>
-        <p><a href="https://youtube.com/@pyaihub">YouTube: PY-AI HUB</a> | <a href="https://www.instagram.com/pyaihub?igsh=MTUwMXBhdmQ4eXhtNA==">Instagram</a></p>
-        <p>Kerala, India</p>
-    </footer>
+    <section id="projects" class="projects">
+        <h2 class="section-title" data-text="PROJECTS">Projects</h2>
+        <div class="projects-container">
+            <div class="project-box">AI Healthcare Chatbot (OpenAI)</div>
+            <div class="project-box">VR Mechanical Laboratory (Unity)</div>
+            <div class="project-box">Sentiment Analysis (Twitter/Flipkart)</div>
+            <div class="project-box">Vehicle Detection and Counting</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title" data-text="CONTACT">Contact</h2>
+        <p><i class="fas fa-envelope contact-icon"></i> <a href="mailto:athulyaestherlucky75@gmail.com">athulyaestherlucky75@gmail.com</a></p>
+        <p><i class="fab fa-linkedin contact-icon"></i> <a href="https://linkedin.com/in/athulya-b-vijay-b65740220/">linkedin.com/in/athulya-b-vijay</a></p>
+        <p><i class="fab fa-github contact-icon"></i> <a href="https://github.com/athulyaesther777">github.com/athulyaesther777</a></p>
+        <p><i class="fab fa-youtube contact-icon"></i> <a href="https://youtube.com/@pyaihub">youtube.com/@pyaihub</a></p>
+        <p><i class="fab fa-instagram contact-icon"></i> <a href="https://www.instagram.com/pyaihub?igsh=MTUwMXBhdmQ4eXhtNA==">instagram.com/pyaihub</a></p>
+        <p><i class="fas fa-map-marker-alt contact-icon"></i> Kerala, India</p>
+    </section>
 </body>
 </html>
