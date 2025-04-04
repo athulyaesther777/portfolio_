@@ -5,9 +5,9 @@
 }
 
 body {
-    background: #1A1A1A; /* Matte Black */
-    color: #F5F5F5; /* Soft White */
-    font-family: 'Inter', sans-serif;
+    background: #2A4066; /* Blue as base */
+    color: #F5E8E4; /* Light Mauve for text */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
 
@@ -16,30 +16,33 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #1A1A1A;
+    background: #2A4066; /* Blue */
     padding: 15px 20px;
     display: flex;
     justify-content: flex-end;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .menu a {
-    color: #00E5FF; /* Electric Cyan */
+    color: #D4A017; /* Mustard */
     text-decoration: none;
     margin: 0 20px;
     font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
     transition: color 0.3s;
 }
 
 .menu a:hover {
-    color: #F5F5F5;
+    color: #F5E8E4; /* Mauve */
     text-decoration: underline;
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(to bottom, #1E3A8A, #1A1A1A); /* Deep Blue to Matte Black */
+    background: linear-gradient(to bottom, #2A4066, #4A7043); /* Blue to Green */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,15 +54,16 @@ body {
 }
 
 .hero-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Lora', serif;
     font-size: 48px;
-    color: #00E5FF; /* Electric Cyan */
+    color: #D4A017; /* Mustard */
     margin-bottom: 10px;
 }
 
 .hero-subtitle {
+    font-family: 'Roboto', sans-serif;
     font-size: 24px;
-    color: #F5F5F5;
+    color: #F5E8E4; /* Mauve */
 }
 
 .cursor {
@@ -70,16 +74,17 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: #00E5FF;
-    color: #1A1A1A;
+    background: #D4A017; /* Mustard */
+    color: #2A4066; /* Blue */
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     border-radius: 5px;
     transition: box-shadow 0.3s;
 }
 
 .cta-btn:hover {
-    box-shadow: 0 0 15px #00E5FF;
+    box-shadow: 0 0 15px #D4A017;
 }
 
 /* General Section Styling */
@@ -88,9 +93,9 @@ section {
 }
 
 h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 24px;
-    color: #00E5FF;
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    color: #4A7043; /* Green */
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 30px;
@@ -111,8 +116,8 @@ h2 {
 }
 
 .timeline-item {
-    background: #A1A1AA; /* Metallic Gray */
-    color: #1A1A1A;
+    background: #8D6A9F; /* Mauve */
+    color: #2A4066; /* Blue */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -121,14 +126,14 @@ h2 {
 }
 
 .timeline-item h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #1E3A8A; /* Deep Blue */
+    font-family: 'Lora', serif;
+    color: #D4A017; /* Mustard */
     font-size: 20px;
 }
 
 .details {
     font-style: italic;
-    color: #F5F5F5;
+    color: #F5E8E4; /* Mauve */
     margin-bottom: 10px;
 }
 
@@ -138,7 +143,7 @@ h2 {
 
 .timeline-item ul li::before {
     content: "•";
-    color: #00E5FF;
+    color: #4A7043; /* Green */
     margin-right: 10px;
 }
 
@@ -149,15 +154,15 @@ h2 {
 }
 
 .edu-card {
-    background: #A1A1AA;
+    background: #8D6A9F; /* Mauve */
     padding: 20px;
     border-radius: 5px;
-    color: #1A1A1A;
+    color: #2A4066; /* Blue */
 }
 
 .edu-card h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #1E3A8A;
+    font-family: 'Lora', serif;
+    color: #D4A017; /* Mustard */
 }
 
 /* Certifications Section */
@@ -170,8 +175,8 @@ h2 {
 }
 
 .cert-card {
-    background: #1A1A1A;
-    border: 1px solid #00E5FF;
+    background: #2A4066; /* Blue */
+    border: 1px solid #D4A017; /* Mustard */
     padding: 20px;
     border-radius: 5px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -179,7 +184,7 @@ h2 {
 
 .cert-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 10px #00E5FF;
+    box-shadow: 0 0 10px #D4A017;
 }
 
 /* Projects Section */
@@ -192,31 +197,32 @@ h2 {
 }
 
 .project-card {
-    background: #1E3A8A; /* Deep Blue */
+    background: #4A7043; /* Green */
     padding: 20px;
     border-radius: 5px;
     text-align: left;
 }
 
 .project-card span {
-    color: #F5F5F5;
+    color: #F5E8E4; /* Mauve */
     font-size: 14px;
 }
 
 /* Contact Section */
 .contact {
-    background: #1E3A8A;
+    background: #2A4066; /* Blue */
     text-align: center;
+    padding: 50px;
 }
 
 .contact-info a {
-    color: #F5F5F5;
+    color: #D4A017; /* Mustard */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .contact-info a:hover {
-    color: #00E5FF;
+    color: #F5E8E4; /* Mauve */
     text-decoration: underline;
 }
 
