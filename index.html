@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Athulya Esther | AI Engineer, Data Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
   <style>
-    body {
+    body {/* Active (Clicked) Element Highlight */
+.active-clicked {
+  background-color: rgba(255, 191, 0, 0.2) !important;
+  color: #FFBF00 !important;
+  font-weight: bold;
+  border-left: 4px solid #FFBF00;
+  box-shadow: 0 0 10px rgba(255, 191, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+      /* Active (Clicked) Element Highlight */
+.active-clicked {
+  background-color: rgba(255, 191, 0, 0.2) !important;
+  color: #FFBF00 !important;
+  font-weight: bold;
+  border-left: 4px solid #FFBF00;
+  box-shadow: 0 0 10px rgba(255, 191, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
       font-family: 'Poppins', sans-serif;
       background-color: black;
       color: white;
@@ -96,10 +117,9 @@
       padding: 100px 50px;
       flex-direction: column;
     }
-    /* Updated grid layout for projects */
     .projects-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
       margin-top: 30px;
     }
@@ -108,17 +128,11 @@
       padding: 20px;
       border-radius: 10px;
       text-align: left;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-    }
-    .project-box:hover {
-      transform: translateY(-10px); /* Slight hover lift effect */
-      box-shadow: 0 10px 20px rgba(255, 191, 0, 0.4); /* Stronger shadow effect */
     }
     footer {
       padding: 50px 0;
     }
 
-    /* Media Query for Mobile */
     @media (max-width: 768px) {
       section {
         flex-direction: column;
@@ -127,20 +141,200 @@
       .about, .education, .experience, .certifications {
         width: 100%;
       }
-      .projects-container {
-        grid-template-columns: 1fr 1fr;
-      }
+      h2.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FFBF00;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2.section-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  font-size: 2.5rem;
+  color: rgba(255, 191, 0, 0.1); /* Light yellow shadow */
+  white-space: nowrap;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contact-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .contact-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-item i {
+            font-size: 50px;
+            color: #ffbf00; /* Amber Color */
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .contact-item a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-item i:hover {
+            color: #e69d00; /* Darker Amber */
+        }
+        .amber-box {
+    background-color: rgba(255, 191, 0, 0.1); /* Transparent amber */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 191, 0, 0.2);
+  }
+
+  .cert-achieve-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .certifications,
+  .achievements {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .certifications h2,
+  .achievements h2 {
+    margin-top: 0;
+  }
+
+  .experience-box {
+    margin-top: 10px;
+  }
+
+  .cert-achieve-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .certifications, .achievements {
+    flex: 1;
+    min-width: 300px;
+    background-color: #FFEB99; /* Amber Yellow */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+  }
+
+  .certifications h2, .achievements h2 {
+    margin-top: 0;
+    color: #6b4e00;
+  }
+
+  .experience-box {
+    margin-top: 10px;
+  }
+
+  ul {
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+
+  p, li {
+    color: #333;
+  }
+    .cert-achieve-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .certifications, .achievements {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(255, 236, 179, 0.4); /* translucent amber */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.1);
+    text-align: left; /* Ensures text is left aligned */
+  }
+
+  .certifications h2,
+  .achievements h2 {
+    margin-top: 0;
+    color: #5e4300;
+    font-weight: bold;
+  }
+
+  .experience-box {
+    margin-top: 10px;
+  }
+
+  ul {
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+
+  p, li {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
     }
   </style>
 </head>
 <body>
 
-  <div class="menu">
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
 
   <div class="container" id="home">
     <h1>I'm <span style="color: white;">Athulya Esther</span></h1>
@@ -166,63 +360,249 @@
     </div>
   </section>
 
-  <section id="resume">
-    <div class="experience">
-      <h2>Experience</h2>
-      <div class="experience-box">
-        <p><strong>ATEES Global</strong>, AI Intern (Dec 2024 – Present)</p>
-        <p><strong>TECHPLEMENT</strong>, Python Development Intern (Sep 2024 - Oct 2024)</p>
-        <p><strong>ASIMOV ROBOTICS</strong>, AI Research Intern (Feb 2024 - Apr 2024)</p>
-        <p><strong>Freelancer</strong>, AI Engineer (Nov 2023 - Present)</p>
-      </div>
-      <div class="skills">
-        <h2>Skills</h2>
-        <div class="skill"><span>Python (TensorFlow, PyTorch)</span> <span class="stars">★★★★☆</span></div>
-        <div class="skill"><span>ML & NLP</span> <span class="stars">★★★☆☆</span></div>
-        <div class="skill"><span>Deep Learning</span> <span class="stars">★★★☆☆</span></div>
-        <div class="skill"><span>Data Engineering</span> <span class="stars">★★★★☆</span></div>
-        <div class="skill"><span>Cloud</span> <span class="stars">★★★☆☆</span></div>
-        <div class="skill"><span>Technical Communication</span> <span class="stars">★★★★☆</span></div>
-      </div>
+  <section id="resume" style="display: flex; flex-wrap: wrap; gap: 40px;">
+  <!-- Left Column: Experience -->
+  <div class="experience" style="flex: 1;">
+    <h2>Experience</h2>
+    <div class="experience-box">
+      <p><strong>ATEES Global</strong>, AI Intern (Dec 2024 – Present)</p>
+      <p><strong>TECHPLEMENT</strong>, Python Development Intern (Sep 2024 - Oct 2024)</p>
+      <p><strong>ASIMOV ROBOTICS</strong>, AI Research Intern (Feb 2024 - Apr 2024)</p>
+      <p><strong>Freelancer</strong>, AI Engineer (Nov 2023 - Present)</p>
     </div>
+  </div>
 
-    <div class="certifications">
-      <h2>Certifications & Achievements</h2>
-      <div class="experience-box">
-        <p><strong>Google WOW Hackathon</strong> - Top 30 Teams</p>
-        <p><strong>Udemy (2024)</strong>:</p>
-        <ul>
-          <li>Master the Basics of Programming</li>
-          <li>Automated with Python</li>
-          <li>100 Days of Code</li>
-        </ul>
-        <p><strong>Avodha (2024)</strong>:</p>
-        <ul>
-          <li>Python and Django</li>
-        </ul>
-        <p><strong>Paper Presentation</strong>: Muthoot Institute of Technology and Science, Jan 3, 2023</p>
-        <p><strong>NSS Volunteer Certificate</strong>: National Service Scheme, 2021 – 2023</p>
-        <p><strong>Google Developer Students Club</strong>:</p>
-        <ul>
-          <li>Member (2022–2023)</li>
-          <li>Technical Executive (2023–2024)</li>
-        </ul>
-      </div>
+  <!-- Right Column: Skills -->
+  <div class="skills" style="flex: 1;">
+    <h2>Skills</h2>
+    <div class="skill"><span>Python (TensorFlow, PyTorch)</span> <span class="stars">★★★★☆</span></div>
+    <div class="skill"><span>ML & NLP</span> <span class="stars">★★★☆☆</span></div>
+    <div class="skill"><span>Deep Learning</span> <span class="stars">★★★☆☆</span></div>
+    <div class="skill"><span>Data Engineering</span> <span class="stars">★★★★☆</span></div>
+    <div class="skill"><span>Cloud</span> <span class="stars">★★★☆☆</span></div>
+    <div class="skill"><span>Technical Communication</span> <span class="stars">★★★★☆</span></div>
+  </div>
+
+<div class="cert-achieve-container">
+  <!-- Left: Certifications -->
+  <div class="certifications">
+    <h2>Certifications</h2>
+    <div class="experience-box">
+      <p><strong>Udemy (2024)</strong>:</p>
+      <ul>
+        <li>Master the Basics of Programming</li>
+        <li>Automated with Python</li>
+        <li>100 Days of Code</li>
+      </ul>
+      <p><strong>Avodha (2024)</strong>:</p>
+      <ul>
+        <li>Python and Django</li>
+      </ul>
     </div>
-  </section>
+  </div>
+
+  <!-- Right: Achievements -->
+  <div class="achievements">
+    <h2>Achievements</h2>
+    <div class="experience-box">
+      <p><strong>Google WOW Hackathon</strong> - Top 30 Teams</p>
+      <p><strong>Paper Presentation</strong>: Muthoot Institute of Technology and Science, Jan 3, 2023</p>
+      <p><strong>NSS Volunteer Certificate</strong>: National Service Scheme, 2021 – 2023</p>
+      <p><strong>Google Developer Students Club</strong>:</p>
+      <ul>
+        <li>Member (2022–2023)</li>
+        <li>Technical Executive (2023–2024)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
   <section id="projects" class="projects">
     <h2>Projects</h2>
     <div class="projects-container">
-      <div class="project-box"><strong>AI Healthcare Chatbot (OpenAI)</strong><br>Developed a chatbot for healthcare queries.</div>
-      <div class="project-box"><strong>VR Mechanical Laboratory (Unity)</strong><br>Created a VR lab simulation.</div>
-      <div class="project-box"><strong>Stress, Spam, Sarcasm Detection</strong><br>Built models to detect stress, spam, and sarcasm.</div>
-      <div class="project-box"><strong>Twitter/Flipkart Sentiment Analysis</strong><br>Performed sentiment analysis on reviews.</div>
-      <div class="project-box"><strong>Vehicle Detection and Counting</strong><br>Developed a traffic monitoring system.</div>
-      <div class="project-box"><strong>PyTorch Expresnet Tracking</strong><br>Built a real-time object tracking system.</div>
-      <div class="project-box"><strong>Face Detection & Image Classification</strong><br>Implemented face recognition models.</div>
+<div class="project-box">
+  <strong>AI Healthcare Chatbot (OpenAI)</strong><br>
+  Developed a custom AI chatbot for healthcare using Python, LangChain, Streamlit, and OpenAI API. Delivered real-time medical support with optimized conversational flow, reducing response time by 45%.
+</div>
+
+<div class="project-box">
+  <strong>AI Healthcare Chatbot (Flutter)</strong><br>
+  Built an AI-powered healthcare chatbot using Flutter, Firebase, and API integration. Provided real-time patient support and accurate health insights.
+</div>
+
+<div class="project-box">
+  <strong>VR Mechanical Laboratory (Unity)</strong><br>
+  Created an immersive VR-based mechanical lab using Unity. Boosted student engagement by 60% through interactive simulations.
+</div>
+
+<div class="project-box">
+  <strong>Stress, Spam, Sarcasm Detection</strong><br>
+  Developed AI models for stress, spam, and sarcasm detection using NLP, TensorFlow, Keras, and SpaCy. Achieved up to 92% accuracy in spam detection and visualized insights using Matplotlib.
+</div>
+
+<div class="project-box">
+  <strong>Twitter/Flipkart Sentiment Analysis</strong><br>
+  Conducted sentiment analysis on social media and e-commerce reviews using NLP and machine learning to classify opinions and customer feedback.
+</div>
+
+<div class="project-box">
+  <strong>Vehicle Detection and Counting</strong><br>
+  Developed a real-time traffic monitoring system using OpenCV and Python for automatic vehicle detection and counting from video streams.
+</div>
+
+<div class="project-box">
+  <strong>PyTorch Expresnet Tracking</strong><br>
+  Built a real-time object tracking system using PyTorch and the Expresnet model architecture, enabling accurate movement detection.
+</div>
+
+<div class="project-box">
+  <strong>Face Detection & Image Classification</strong><br>
+  Implemented facial recognition and image classification models using OpenCV and deep learning, achieving high accuracy in visual identification tasks.
+</div>
+
+<div class="project-box">
+  <strong>Contact Management System</strong><br>
+  Created a desktop app using Python, Tkinter, and SQLite for easy contact management with a user-friendly interface and efficient data handling.
+</div>
+
+<div class="project-box">
+  <strong>Automatic Bulk Email Sender</strong><br>
+  Collaborated on a Python tool using SMTP, Tkinter, and SQLite to send personalized bulk emails with a responsive GUI and integrated contact database.
+</div>
+
     </div>
   </section>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Section</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .contact-heading {
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .contact-subheading {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: #111; /* Dark circle */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        .icon-circle i {
+            font-size: 35px;
+            color: #ffbf00; /* Amber */
+        }
+
+        .contact-title {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .contact-info a {
+            color: #ffbf00;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <h2 class="contact-heading">Contact Me</h2>
+        <p class="contact-subheading">Below are the details to reach out to me!</p>
+        <div class="contact-icons">
+            <div class="contact-item">
+                <div class="icon-circle">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div class="contact-title">Address</div>
+                <div class="contact-info">Thrissur, Kerala</div>
+            </div>
+            <div class="contact-item">
+                <div class="icon-circle">
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div class="contact-title">Email Address</div>
+                <div class="contact-info">
+                    <a href="mailto:athulyaestherlucky75@gmail.com">athulyaestherlucky75@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon-circle">
+                    <i class="bi bi-linkedin"></i>
+                </div>
+                <div class="contact-title">LinkedIn</div>
+                <div class="contact-info">
+                    <a href="https://linkedin.com/in/athulya-b-vijay-b65740220/" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon-circle">
+                    <i class="bi bi-github"></i>
+                </div>
+                <div class="contact-title">GitHub</div>
+                <div class="contact-info">
+                    <a href="https://github.com/athulyaesther777" target="_blank">GitHub Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
 
   <footer>
     Find me on <a href="https://linkedin.com/in/your-profile" target="_blank" style="color: #FFBF00; text-decoration: underline;">LinkedIn</a>
