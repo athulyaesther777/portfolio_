@@ -8,15 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <style>
-    body {/* Active (Clicked) Element Highlight */
-.active-clicked {
-  background-color: rgba(255, 191, 0, 0.2) !important;
-  color: #FFBF00 !important;
-  font-weight: bold;
-  border-left: 4px solid #FFBF00;
-  box-shadow: 0 0 10px rgba(255, 191, 0, 0.4);
-  transition: all 0.3s ease;
-}
+    body {
 
       /* Active (Clicked) Element Highlight */
 .active-clicked {
@@ -68,16 +60,18 @@
       top: 0;
       width: 100%;
       background-color: black;
-      padding: 0.5cm 0;
+      padding: 0.1cm ;
       z-index: 1000;
       display: flex;
       justify-content: flex-end;
-      box-shadow: 0 2px 5px rgba(255, 191, 0, 0.2);
+      align-items: cen;
+      
+      box-shadow: 0 2px 5px rgba(255, 191, 0, 0.3);
     }
     .menu a {
       color: #FFBF00;
       text-decoration: none;
-      margin: 10px 20px;
+      margin: 20px 20px;
       font-size: 1.2rem;
     }
     section {
@@ -104,9 +98,11 @@
     }
     .skills {
       margin-top: 30px;
+      color: #FFBF00;
     }
     .skill {
       display: flex;
+      color: #FFFFFF;
       justify-content: space-between;
       margin-bottom: 10px;
     }
@@ -124,8 +120,8 @@
       margin-top: 30px;
     }
     .project-box {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.0.7);
+      padding: 30px;
       border-radius: 10px;
       text-align: left;
     }
@@ -351,37 +347,46 @@ h2.section-title::before {
       </div>
     </div>
   </section>
+  
+  <!-- Resume Section -->
+<section id="resume" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 40vh;">
+  <!-- Centered Resume Title -->
+  <h1 style="color: white; font-size: 2.5rem; margin-bottom: 40px;">RESUME</h1>
 
-  <section id="resume" style="display: flex; flex-wrap: wrap; gap: 40px;">
-  <!-- Left Column: Experience -->
-  <div class="experience" style="flex: 1;">
-    <h2>Experience</h2>
-    <div class="experience-box">
-      <p><strong>ATEES Global</strong>, AI Intern (Dec 2024 – Present)</p>
-      <p><strong>TECHPLEMENT</strong>, Python Development Intern (Sep 2024 - Oct 2024)</p>
-      <p><strong>ASIMOV ROBOTICS</strong>, AI Research Intern (Feb 2024 - Apr 2024)</p>
-      <p><strong>Freelancer</strong>, AI Engineer (Nov 2023 - Present)</p>
+  <!-- Flex Container for Experience and Skills -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; width: 100%; max-width: 1200px;">
+    
+    <!-- Left Column: Experience -->
+    <div class="experience" style="flex: 1; min-width: 300px; max-width: 600px;">
+      <h2 style="color: #FFBF00;">Experience</h2>
+      <div class="experience-box" style="color: white;">
+        <p><strong>ATEES Global</strong>, AI Intern (Dec 2024 – Present)</p>
+        <p><strong>TECHPLEMENT</strong>, Python Development Intern (Sep 2024 - Oct 2024)</p>
+        <p><strong>ASIMOV ROBOTICS</strong>, AI Research Intern (Feb 2024 - Apr 2024)</p>
+        <p><strong>Freelancer</strong>, AI Engineer (Nov 2023 - Present)</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Right Column: Skills -->
-  <div class="skills" style="flex: 1;">
-    <h2>Skills</h2>
-    <div class="skill"><span>Python (TensorFlow, PyTorch)</span> <span class="stars">★★★★☆</span></div>
-    <div class="skill"><span>ML & NLP</span> <span class="stars">★★★☆☆</span></div>
-    <div class="skill"><span>Deep Learning</span> <span class="stars">★★★☆☆</span></div>
-    <div class="skill"><span>Data Engineering</span> <span class="stars">★★★★☆</span></div>
-    <div class="skill"><span>Cloud</span> <span class="stars">★★★☆☆</span></div>
-    <div class="skill"><span>Technical Communication</span> <span class="stars">★★★★☆</span></div>
+    <!-- Right Column: Skills -->
+    <div class="skills" style="flex: 1; min-width: 300px; max-width: 600px;">
+      <h2 style="color: #FFBF00;">Skills</h2>
+      <div class="skill" style="color: white;"><span>Python (TensorFlow, PyTorch)</span> <span class="stars">★★★★☆</span></div>
+      <div class="skill" style="color: white;"><span>ML & NLP</span> <span class="stars">★★★☆☆</span></div>
+      <div class="skill" style="color: white;"><span>Deep Learning</span> <span class="stars">★★★☆☆</span></div>
+      <div class="skill" style="color: white;"><span>Data Engineering</span> <span class="stars">★★★★☆</span></div>
+      <div class="skill" style="color: white;"><span>Cloud</span> <span class="stars">★★★☆☆</span></div>
+      <div class="skill" style="color: white;"><span>Technical Communication</span> <span class="stars">★★★★☆</span></div>
+    </div>
+    
   </div>
-
+</section>
 
   
-</section>
+
 
 
   <section id="projects" class="projects">
-    <h2>Projects</h2>
+    <h1>Projects</h1>
     <div class="projects-container">
 <div class="project-box">
   <strong>AI Healthcare Chatbot (OpenAI)</strong><br>
