@@ -6,7 +6,7 @@
 
 body {
     background: #000000; /* Black */
-    color: #F0F0F0; /* Light Gray */
+    color: #C0C0C0; /* Silver */
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
 }
@@ -16,14 +16,15 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #000000;
+    background: linear-gradient(to bottom, #000000, #1A1A1A); /* Black gradient */
     padding: 15px 20px;
     text-align: right;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(192, 192, 192, 0.1); /* Silver shadow */
 }
 
 .menu a {
-    color: #28AE60; /* Emerald Green */
+    color: #008080; /* Teal */
     text-decoration: none;
     margin: 0 15px;
     font-weight: 700;
@@ -31,7 +32,7 @@ body {
 }
 
 .menu a:hover {
-    color: #FFFFFF; /* White */
+    color: #C0C0C0; /* Silver */
 }
 
 /* Hero Section */
@@ -43,33 +44,36 @@ body {
     align-items: center;
     text-align: center;
     background: #000000;
+    border-bottom: 1px solid #C0C0C0; /* Silver border */
 }
 
 .hero-title {
     font-family: 'Lora', serif;
     font-size: 42px;
-    color: #FFFFFF; /* White */
+    color: #C0C0C0; /* Silver */
+    text-shadow: 0 0 5px rgba(0, 128, 128, 0.5); /* Teal glow */
 }
 
 .hero-subtitle {
     font-size: 20px;
-    color: #F0F0F0; /* Light Gray */
+    color: #C0C0C0; /* Silver */
     margin: 10px 0;
 }
 
 .cta-btn {
     padding: 10px 20px;
-    background: #28AE60; /* Emerald Green */
+    background: #008080; /* Teal */
     color: #FFFFFF;
     text-decoration: none;
     font-weight: 700;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
 .cta-btn:hover {
-    background: #FFFFFF;
+    background: #C0C0C0; /* Silver */
     color: #000000;
+    box-shadow: 0 0 10px #008080; /* Teal glow */
 }
 
 /* Section Styling */
@@ -82,29 +86,38 @@ section {
 h2 {
     font-family: 'Lora', serif;
     font-size: 24px;
-    color: #28AE60; /* Emerald Green */
+    color: #008080; /* Teal */
     margin-bottom: 20px;
+    border-bottom: 2px solid #C0C0C0; /* Silver underline */
+    display: inline-block;
 }
 
 /* About */
 .about p {
     max-width: 600px;
     margin: 0 auto;
+    font-style: italic;
 }
 
 /* Resume */
 .timeline-item, .education p {
-    background: #F0F0F0; /* Light Gray */
-    color: #000000;
+    background: #1A1A1A; /* Darker Black */
+    color: #C0C0C0; /* Silver */
     padding: 15px;
     margin-bottom: 15px;
-    border-radius: 5px;
+    border-left: 3px solid #008080; /* Teal accent */
+    border-radius: 3px;
     font-size: 14px;
+    transition: background 0.3s;
+}
+
+.timeline-item:hover, .education p:hover {
+    background: #2A2A2A;
 }
 
 .timeline-item span, .education span {
     font-style: italic;
-    color: #666;
+    color: #808080; /* Darker Silver */
 }
 
 /* Certifications */
@@ -116,10 +129,15 @@ h2 {
 
 .cert-card {
     background: #000000;
-    border: 1px solid #28AE60;
+    border: 1px solid #C0C0C0; /* Silver */
     padding: 15px;
     text-align: center;
     border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.cert-card:hover {
+    border-color: #008080; /* Teal */
 }
 
 /* Projects */
@@ -130,27 +148,33 @@ h2 {
 }
 
 .project-card {
-    background: #28AE60; /* Emerald Green */
+    background: #008080; /* Teal */
     color: #FFFFFF;
     padding: 15px;
     text-align: center;
     border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 /* Contact */
 .contact {
-    background: #000000;
+    background: linear-gradient(to top, #000000, #1A1A1A); /* Black gradient */
     padding: 40px 20px;
     text-align: center;
+    border-top: 1px solid #C0C0C0; /* Silver */
 }
 
 .contact a {
-    color: #28AE60; /* Emerald Green */
+    color: #008080; /* Teal */
     text-decoration: none;
 }
 
 .contact a:hover {
-    color: #FFFFFF; /* White */
+    color: #C0C0C0; /* Silver */
 }
 
 /* Responsive */
