@@ -227,6 +227,37 @@ h2.section-title::before {
   }
 
   .cert-achieve-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 0 60px;
+}
+
+.certifications, .achievements {
+  width: 48%;
+  text-align: left;
+}
+
+.certifications h2, .achievements h2 {
+  font-size: 2.5rem;
+  color: #FFBF00;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .certifications, .achievements {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .cert-achieve-container {
+    padding: 0 30px;
+  }
+}
+
+
+  .cert-achieve-container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -281,45 +312,6 @@ h2.section-title::before {
 
   p, li {
     color: #333;
-  }
-    .cert-achieve-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-  }
-
-  .certifications, .achievements {
-    flex: 1;
-    min-width: 300px;
-    background-color: rgba(255, 236, 179, 0.4); /* translucent amber */
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(255, 193, 7, 0.1);
-    text-align: left; /* Ensures text is left aligned */
-  }
-
-  .certifications h2,
-  .achievements h2 {
-    margin-top: 0;
-    color: #5e4300;
-    font-weight: bold;
-  }
-
-  .experience-box {
-    margin-top: 10px;
-  }
-
-  ul {
-    margin-top: 5px;
-    padding-left: 20px;
-  }
-
-  p, li {
-    color: #333;
-    font-size: 15px;
-    line-height: 1.6;
   }
 
     }
@@ -383,38 +375,8 @@ h2.section-title::before {
     <div class="skill"><span>Technical Communication</span> <span class="stars">★★★★☆</span></div>
   </div>
 
-<div class="cert-achieve-container">
-  <!-- Left: Certifications -->
-  <div class="certifications">
-    <h2>Certifications</h2>
-    <div class="experience-box">
-      <p><strong>Udemy (2024)</strong>:</p>
-      <ul>
-        <li>Master the Basics of Programming</li>
-        <li>Automated with Python</li>
-        <li>100 Days of Code</li>
-      </ul>
-      <p><strong>Avodha (2024)</strong>:</p>
-      <ul>
-        <li>Python and Django</li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- Right: Achievements -->
-  <div class="achievements">
-    <h2>Achievements</h2>
-    <div class="experience-box">
-      <p><strong>Google WOW Hackathon</strong> - Top 30 Teams</p>
-      <p><strong>Paper Presentation</strong>: Muthoot Institute of Technology and Science, Jan 3, 2023</p>
-      <p><strong>NSS Volunteer Certificate</strong>: National Service Scheme, 2021 – 2023</p>
-      <p><strong>Google Developer Students Club</strong>:</p>
-      <ul>
-        <li>Member (2022–2023)</li>
-        <li>Technical Executive (2023–2024)</li>
-      </ul>
-    </div>
-  </div>
+  
 </section>
 
 
