@@ -1,196 +1,287 @@
-<section id="projects">
-  <h2 class="section-title reveal">Projects</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Athulya Esther | Data Analyst Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#0f172a;
+  color:#e2e8f0;
+  scroll-behavior:smooth;
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  background:#0f172a;
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav h2{
+  color:#3b82f6;
+  font-weight:700;
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:#94a3b8;
+  font-weight:500;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#3b82f6;
+}
+
+section{
+  padding:120px 5%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  color:#3b82f6;
+}
+
+.hero p{
+  font-size:1.3rem;
+  color:#94a3b8;
+  margin-top:20px;
+}
+
+.btn{
+  margin-top:30px;
+  display:inline-block;
+  padding:12px 30px;
+  background:#3b82f6;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:60px;
+  color:#3b82f6;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:25px;
+}
+
+.project-card{
+  background:#1e293b;
+  padding:25px;
+  border-radius:15px;
+  transition:.3s;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+  border-color:#3b82f6;
+}
+
+.project-card h3{
+  margin-bottom:15px;
+  color:#93c5fd;
+}
+
+.project-card p{
+  font-size:0.95rem;
+  color:#cbd5e1;
+  margin-bottom:15px;
+}
+
+.project-card a{
+  color:#3b82f6;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.about p{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  color:#cbd5e1;
+  line-height:1.7;
+}
+
+.resume{
+  text-align:center;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-top:20px;
+}
+
+.social-icons a{
+  font-size:28px;
+  color:#94a3b8;
+  transition:.3s;
+}
+
+.social-icons a:hover{
+  color:#3b82f6;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+@media(max-width:768px){
+  nav ul{flex-wrap:wrap;gap:15px}
+  .hero h1{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h2>Athulya Esther</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <h1>Data Analyst</h1>
+  <p>Transforming raw data into meaningful insights • Specializing in Python, ML & Analytics</p>
+  <a href="#projects" class="btn">View My Work</a>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    <p>
+      I am a Data Analyst focused on transforming complex datasets into actionable business insights.
+      Skilled in Python, Pandas, NumPy, Machine Learning, Data Cleaning, Visualization,
+      and predictive modeling. I specialize in end-to-end analysis pipelines — from raw CSV data
+      to strategic decision-making.
+    </p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Data Analytics Projects</h2>
   <div class="projects-grid">
 
-    <!-- Faithverse Bible App -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">Faithverse Bible App</h3>
-        <p class="project-desc">
-          Modern Bible study app built with Streamlit featuring daily verses, bookmarking,
-          search functionality and responsive UI.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Streamlit</span>
-          <span class="tech-tag">SQLite</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/faithverse-bible-app" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
+    <div class="project-card">
+      <h3>End-to-End Real-World Data Analysis</h3>
+      <p>Complete business analytics workflow from raw CSV → EDA → visualization → insights.</p>
+      <a href="https://github.com/athulyaesther777/PyAI_Hub/blob/main/Pandas/pandas_advanced/adv_pd_part10.py" target="_blank">
+        <i class="bi bi-github"></i> View Project
+      </a>
     </div>
 
-    <!-- Household Power ML -->
-    <div class="project-card reveal reveal-delay-1">
-      <div class="project-header">
-        <h3 class="project-title">Household Power Consumption ML</h3>
-        <p class="project-desc">
-          Time-series forecasting dashboard analyzing electricity usage using ARIMA,
-          Prophet and LSTM models with interactive visualization.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Prophet</span>
-          <span class="tech-tag">LSTM</span>
-          <span class="tech-tag">Plotly</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/household-power-consumption-ml" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
+    <div class="project-card">
+      <h3>Household Power Consumption Prediction</h3>
+      <p>Time-series forecasting using ARIMA, Prophet & LSTM models with visualization dashboard.</p>
+      <a href="https://github.com/athulyaesther777/household-power-consumption-ml" target="_blank">
+        <i class="bi bi-github"></i> View Project
+      </a>
     </div>
 
-    <!-- End-to-End Real World Data Analysis -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">End-to-End Real-World Data Analysis</h3>
-        <p class="project-desc">
-          Complete pipeline from raw CSV to actionable business decisions using
-          Pandas, EDA, visualization and insight generation.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">Pandas</span>
-          <span class="tech-tag">Matplotlib</span>
-          <span class="tech-tag">Business Analytics</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/PyAI_Hub/blob/main/Pandas/pandas_advanced/adv_pd_part10.py" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
+    <div class="project-card">
+      <h3>Mental Health Treatment Prediction</h3>
+      <p>Classification model predicting treatment needs using feature engineering & ML algorithms.</p>
+      <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/Mental-Health-Treatment-Prediction" target="_blank">
+        <i class="bi bi-github"></i> View Project
+      </a>
     </div>
 
-    <!-- Mental Health Treatment Prediction -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">Mental Health Treatment Prediction</h3>
-        <p class="project-desc">
-          Machine learning classification model predicting mental health treatment
-          needs with feature engineering and model evaluation.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">Machine Learning</span>
-          <span class="tech-tag">Classification</span>
-          <span class="tech-tag">Scikit-Learn</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/Mental-Health-Treatment-Prediction" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
+    <div class="project-card">
+      <h3>Student Stress Risk Prediction</h3>
+      <p>Predictive ML system analyzing behavioral and academic data for risk identification.</p>
+      <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/student_stress_risk_prediction" target="_blank">
+        <i class="bi bi-github"></i> View Project
+      </a>
     </div>
 
-    <!-- Time Series Forecasting -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">Time Series Forecasting</h3>
-        <p class="project-desc">
-          Forecasting trends using statistical and ML models including ARIMA
-          and Prophet with performance comparison.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">Time Series</span>
-          <span class="tech-tag">ARIMA</span>
-          <span class="tech-tag">Prophet</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/Time%20Series%20Forecasting" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
+    <div class="project-card">
+      <h3>Time Series Forecasting</h3>
+      <p>Trend forecasting using ARIMA & Prophet with performance evaluation.</p>
+      <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/Time%20Series%20Forecasting" target="_blank">
+        <i class="bi bi-github"></i> View Project
+      </a>
     </div>
 
-    <!-- Student Stress Risk Prediction -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">Student Stress Risk Prediction</h3>
-        <p class="project-desc">
-          Predictive ML system identifying high-risk students based on academic
-          and behavioral patterns.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">ML</span>
-          <span class="tech-tag">Prediction</span>
-          <span class="tech-tag">Data Analysis</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/student_stress_risk_prediction" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
-    </div>
-
-    <!-- AI Agents -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">AI Agents Automation System</h3>
-        <p class="project-desc">
-          Custom AI agent workflow system enabling automated task execution
-          and intelligent processing pipelines.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">AI Agents</span>
-          <span class="tech-tag">Automation</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/AI_Agents" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
-    </div>
-
-    <!-- Resume Screening System -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">AI Resume Screening System</h3>
-        <p class="project-desc">
-          NLP-based resume ranking and filtering tool improving recruitment efficiency.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">NLP</span>
-          <span class="tech-tag">Text Processing</span>
-          <span class="tech-tag">Scikit-Learn</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/PyAI_Hub/blob/main/PyAIHubProjects/resume_screeening_system.py" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
-    </div>
-
-    <!-- Hotel Booking Cleaner -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <h3 class="project-title">Hotel Booking Data Cleaner</h3>
-        <p class="project-desc">
-          Data preprocessing pipeline handling missing values, duplicates
-          and inconsistent records for production-ready datasets.
-        </p>
-        <div class="tech-tags">
-          <span class="tech-tag">Data Cleaning</span>
-          <span class="tech-tag">Pandas</span>
-          <span class="tech-tag">EDA</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/hotel-booking-data-cleaner" class="project-link" target="_blank">
-          <i class="bi bi-github"></i> Source Code
-        </a>
-      </div>
+    <div class="project-card">
+      <h3>Hotel Booking Data Cleaner</h3>
+      <p>Data preprocessing pipeline handling missing values, duplicates & inconsistencies.</p>
+      <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/hotel-booking-data-cleaner" target="_blank">
+        <i class="bi bi-github"></i> View Project
+      </a>
     </div>
 
   </div>
 </section>
+
+<section id="resume" class="resume">
+  <h2 class="section-title">Resume</h2>
+  <a href="resume.pdf" download class="btn">
+    <i class="bi bi-download"></i> Download Resume
+  </a>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Connect With Me</h2>
+  <div class="social-icons">
+    <a href="https://github.com/athulyaesther777" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://www.linkedin.com/in/athulya-b-vijay-b65740220" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <a href="https://www.instagram.com/pyaihub" target="_blank"><i class="bi bi-instagram"></i></a>
+    <a href="https://x.com/athulya_esther" target="_blank"><i class="bi bi-twitter-x"></i></a>
+    <a href="https://www.facebook.com/share/1CPcKgBJL8/" target="_blank"><i class="bi bi-facebook"></i></a>
+    <a href="https://www.threads.com/@pyaihub" target="_blank"><i class="bi bi-share"></i></a>
+    <a href="https://discord.gg/r2Bh7vSHQ" target="_blank"><i class="bi bi-discord"></i></a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Athulya Esther • Data Analyst Portfolio
+</footer>
+
+</body>
+</html>
