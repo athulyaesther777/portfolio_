@@ -186,20 +186,45 @@
     .skill-category h3 {
       color: #93c5fd;
       font-size: 1.4rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .skill-category h3 i {
+      font-size: 1.5rem;
+      color: #3b82f6;
     }
 
     .skill-item {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
     }
 
     .skill-name {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
+      align-items: center;
+      font-size: 1.05rem;
       color: #cbd5e1;
+      font-weight: 500;
+    }
+
+    .skill-icon-name {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .skill-icon-name i {
+      font-size: 1.4rem;
+      color: #60a5fa;
+      width: 32px;
+      text-align: center;
     }
 
     .skill-bar {
@@ -215,12 +240,11 @@
       background: linear-gradient(90deg, #3b82f6, #60a5fa);
       width: 0;
       border-radius: 5px;
-      transition: width 1.5s ease-out;
       animation: fillBar 2s ease-out forwards;
     }
 
     .skill-percentage {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #94a3b8;
       font-weight: 500;
     }
@@ -391,16 +415,19 @@
     </div>
   </section>
 
-  <!-- ─── SKILLS SECTION ──────────────────────────────────── -->
+  <!-- ─── SKILLS SECTION WITH ICONS ───────────────────────── -->
   <section id="skills" class="reveal">
     <h2 class="section-title">Technical Skills</h2>
     <div class="skills-grid">
 
       <div class="skill-category">
-        <h3>Programming & Data Processing</h3>
+        <h3><i class="bi bi-terminal-fill"></i> Programming & Data Processing</h3>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Python</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-filetype-py"></i>
+              <span>Python</span>
+            </div>
             <span class="skill-percentage">95%</span>
           </div>
           <div class="skill-bar">
@@ -409,7 +436,10 @@
         </div>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Pandas & NumPy</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-table"></i>
+              <span>Pandas & NumPy</span>
+            </div>
             <span class="skill-percentage">92%</span>
           </div>
           <div class="skill-bar">
@@ -418,7 +448,10 @@
         </div>
         <div class="skill-item">
           <div class="skill-name">
-            <span>SQL</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-database"></i>
+              <span>SQL</span>
+            </div>
             <span class="skill-percentage">85%</span>
           </div>
           <div class="skill-bar">
@@ -428,10 +461,13 @@
       </div>
 
       <div class="skill-category">
-        <h3>Machine Learning & Analytics</h3>
+        <h3><i class="bi bi-robot"></i> Machine Learning & Analytics</h3>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Scikit-learn</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-cpu"></i>
+              <span>Scikit-learn</span>
+            </div>
             <span class="skill-percentage">88%</span>
           </div>
           <div class="skill-bar">
@@ -440,7 +476,10 @@
         </div>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Time Series (Prophet, ARIMA, LSTM)</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-graph-up-arrow"></i>
+              <span>Time Series (Prophet, ARIMA, LSTM)</span>
+            </div>
             <span class="skill-percentage">82%</span>
           </div>
           <div class="skill-bar">
@@ -449,7 +488,10 @@
         </div>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Data Visualization (Matplotlib, Seaborn, Plotly)</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-bar-chart-line-fill"></i>
+              <span>Data Visualization (Matplotlib, Seaborn, Plotly)</span>
+            </div>
             <span class="skill-percentage">90%</span>
           </div>
           <div class="skill-bar">
@@ -459,10 +501,13 @@
       </div>
 
       <div class="skill-category">
-        <h3>Tools & Deployment</h3>
+        <h3><i class="bi bi-cloud-arrow-up-fill"></i> Tools & Deployment</h3>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Streamlit</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-window-stack"></i>
+              <span>Streamlit</span>
+            </div>
             <span class="skill-percentage">94%</span>
           </div>
           <div class="skill-bar">
@@ -471,7 +516,10 @@
         </div>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Git & GitHub</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-git"></i>
+              <span>Git & GitHub</span>
+            </div>
             <span class="skill-percentage">90%</span>
           </div>
           <div class="skill-bar">
@@ -480,7 +528,10 @@
         </div>
         <div class="skill-item">
           <div class="skill-name">
-            <span>Jupyter / VS Code</span>
+            <div class="skill-icon-name">
+              <i class="bi bi-journal-code"></i>
+              <span>Jupyter / VS Code</span>
+            </div>
             <span class="skill-percentage">96%</span>
           </div>
           <div class="skill-bar">
