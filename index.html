@@ -1,493 +1,196 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Athulya Esther | AI Engineer & Data Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #0a0e17;
-      color: #e2e8f0;
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
+<section id="projects">
+  <h2 class="section-title reveal">Projects</h2>
 
-    /* ─── PARTICLE BACKGROUND ─────────────────────────────── */
-    #particles {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-    }
+  <div class="projects-grid">
 
-    /* ─── ANIMATIONS ──────────────────────────────────────── */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
-      50%      { box-shadow: 0 0 35px 12px rgba(96, 165, 250, 0.22); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.15s; }
-    .reveal-delay-2 { transition-delay: 0.3s; }
-
-    /* ─── NAVIGATION ──────────────────────────────────────── */
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(10, 14, 23, 0.9);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(59, 130, 246, 0.15);
-      z-index: 1000;
-      padding: 1.25rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.4s ease;
-    }
-    .navbar.scrolled {
-      background: rgba(10, 14, 23, 0.97);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
-    }
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #60a5fa;
-      letter-spacing: -0.7px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2.8rem;
-    }
-    .nav-links a {
-      color: #94a3b8;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0; height: 2.5px;
-      bottom: -7px; left: 0;
-      background: #60a5fa;
-      transition: width 0.4s ease;
-    }
-    .nav-links a:hover::after,
-    .nav-links a.active::after { width: 100%; }
-    .nav-links a:hover,
-    .nav-links a.active { color: #60a5fa; }
-
-    /* ─── HERO ────────────────────────────────────────────── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 5%;
-      position: relative;
-    }
-    .hero h1 {
-      font-size: clamp(3.8rem, 10vw, 6.8rem);
-      font-weight: 800;
-      background: linear-gradient(90deg, #60a5fa, #a5b4fc 50%, #c084fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 1.5rem;
-      animation: glow 7s ease-in-out infinite alternate;
-    }
-    .hero .tagline {
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      color: #94a3b8;
-      font-weight: 300;
-      max-width: 780px;
-      margin: 0 auto 3.5rem;
-    }
-
-    /* ─── SECTIONS ────────────────────────────────────────── */
-    section { padding: 160px 5% 120px; max-width: 1320px; margin: 0 auto; }
-    .section-title {
-      font-size: 3.2rem;
-      font-weight: 700;
-      color: #60a5fa;
-      text-align: center;
-      margin-bottom: 4.5rem;
-      position: relative;
-    }
-    .section-title::after {
-      content: '';
-      width: 110px; height: 5px;
-      background: linear-gradient(90deg, #60a5fa, #a5b4fc);
-      position: absolute;
-      bottom: -18px; left: 50%;
-      transform: translateX(-50%);
-      border-radius: 3px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 2.6rem;
-    }
-
-    .project-card {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(96, 165, 250, 0.22);
-      border-radius: 18px;
-      overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-      backdrop-filter: blur(12px);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card:hover {
-      transform: translateY(-18px) scale(1.025);
-      border-color: #60a5fa;
-      box-shadow: 0 35px 80px rgba(59,130,246,0.25);
-    }
-
-    .project-header {
-      padding: 2.6rem 2.4rem 1.4rem;
-      flex: 1;
-    }
-
-    .project-title {
-      font-size: 1.52rem;
-      font-weight: 700;
-      color: #93c5fd;
-      margin-bottom: 1.1rem;
-    }
-
-    .project-desc {
-      color: #cbd5e1;
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.4rem;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 1.2rem 0 1.6rem;
-    }
-
-    .tech-tag {
-      background: rgba(96,165,250,0.16);
-      color: #93c5fd;
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 500;
-      border: 1px solid rgba(96,165,250,0.4);
-    }
-
-    .demo-container {
-      flex: 1;
-      min-height: 520px;
-      background: rgba(10, 16, 32, 0.75);
-      border-top: 1px solid rgba(96,165,250,0.18);
-      position: relative;
-    }
-
-    .demo-iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 0 0 18px 18px;
-    }
-
-    .project-footer {
-      padding: 1.4rem 2.4rem;
-      border-top: 1px solid rgba(96,165,250,0.18);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(10, 16, 32, 0.4);
-    }
-
-    .project-link {
-      color: #60a5fa;
-      text-decoration: none;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      transition: all 0.35s ease;
-    }
-
-    .project-link:hover {
-      color: #93c5fd;
-      transform: translateX(6px);
-    }
-
-    /* ─── BUTTON ──────────────────────────────────────────── */
-    .cta-btn {
-      background: linear-gradient(135deg, #3b82f6, #60a5fa);
-      color: white;
-      padding: 1.1rem 2.6rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow: 0 14px 35px rgba(59,130,246,0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 20px 50px rgba(59,130,246,0.4);
-    }
-
-    @media (max-width: 768px) {
-      .nav-links { gap: 1.6rem; font-size: 0.97rem; flex-wrap: wrap; justify-content: center; }
-      .hero h1 { font-size: 4.6rem; }
-      .section-title { font-size: 2.6rem; }
-      section { padding: 120px 5% 80px; }
-      .demo-container { min-height: 480px; }
-    }
-
-    @media (max-width: 480px) {
-      .projects-grid { gap: 2rem; }
-      .project-card { border-radius: 14px; }
-      .project-header { padding: 2rem 1.6rem 1.2rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Particle Background Canvas -->
-  <canvas id="particles"></canvas>
-
-  <nav class="navbar" id="navbar">
-    <div class="logo">Athulya Esther</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <section class="hero" id="home">
-    <h1>AI Engineer & Data Analyst</h1>
-    <p class="tagline reveal">Creating intelligent systems • Transforming data into insight • Focused on ML, NLP & production AI</p>
-    <a href="#projects" class="cta-btn reveal reveal-delay-1">Explore Projects <i class="bi bi-arrow-right"></i></a>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title reveal">Projects</h2>
-
-    <div class="projects-grid">
-
-      <!-- Faithverse Bible App -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <h3 class="project-title">Faithverse Bible App</h3>
-          <p class="project-desc">
-            Modern, mobile-friendly Bible study application built with Streamlit. Features daily verses, search functionality, bookmarking, reading plans, and clean responsive design for spiritual engagement.
-          </p>
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Streamlit</span>
-            <span class="tech-tag">SQLite</span>
-            <span class="tech-tag">Responsive UI</span>
-          </div>
-        </div>
-        <div class="demo-container">
-          <iframe 
-            class="demo-iframe" 
-            src="https://faithverse-bible-app-dig2cazesdbpxfqpjfkkt5.streamlit.app/?embed=true"
-            title="Faithverse Bible App Demo"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="project-footer">
-          <a href="https://github.com/athulyaesther777/faithverse-bible-app" class="project-link" target="_blank">
-            <i class="bi bi-github"></i> Source Code
-          </a>
+    <!-- Faithverse Bible App -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">Faithverse Bible App</h3>
+        <p class="project-desc">
+          Modern Bible study app built with Streamlit featuring daily verses, bookmarking,
+          search functionality and responsive UI.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Streamlit</span>
+          <span class="tech-tag">SQLite</span>
         </div>
       </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/faithverse-bible-app" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-      <!-- Household Power Consumption ML -->
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-header">
-          <h3 class="project-title">Household Power Consumption Prediction</h3>
-          <p class="project-desc">
-            Time-series forecasting dashboard predicting household electricity usage. Includes data exploration, model comparison (ARIMA, Prophet, LSTM), interactive charts, and energy optimization insights.
-          </p>
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pandas • NumPy</span>
-            <span class="tech-tag">Prophet • LSTM</span>
-            <span class="tech-tag">Streamlit</span>
-            <span class="tech-tag">Plotly</span>
-          </div>
-        </div>
-        <div class="demo-container">
-          <iframe 
-            class="demo-iframe" 
-            src="https://household-power-consumption-mlbranchm-wedijzygvfuzjdug7xg8bs.streamlit.app/?embed=true"
-            title="Household Power Consumption Prediction Demo"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="project-footer">
-          <a href="https://github.com/athulyaesther777/household-power-consumption-ml" class="project-link" target="_blank">
-            <i class="bi bi-github"></i> Source Code
-          </a>
+    <!-- Household Power ML -->
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-header">
+        <h3 class="project-title">Household Power Consumption ML</h3>
+        <p class="project-desc">
+          Time-series forecasting dashboard analyzing electricity usage using ARIMA,
+          Prophet and LSTM models with interactive visualization.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Prophet</span>
+          <span class="tech-tag">LSTM</span>
+          <span class="tech-tag">Plotly</span>
         </div>
       </div>
-
-      <!-- You can add more project cards here (without iframe if no live demo) -->
-
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/household-power-consumption-ml" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
     </div>
-  </section>
 
-  <!-- Add your About, Resume, Contact sections here if needed -->
+    <!-- End-to-End Real World Data Analysis -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">End-to-End Real-World Data Analysis</h3>
+        <p class="project-desc">
+          Complete pipeline from raw CSV to actionable business decisions using
+          Pandas, EDA, visualization and insight generation.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Pandas</span>
+          <span class="tech-tag">Matplotlib</span>
+          <span class="tech-tag">Business Analytics</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/PyAI_Hub/blob/main/Pandas/pandas_advanced/adv_pd_part10.py" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-  <footer>
-    <p>© 2026 Athulya Esther • Built with precision & curiosity</p>
-  </footer>
+    <!-- Mental Health Treatment Prediction -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">Mental Health Treatment Prediction</h3>
+        <p class="project-desc">
+          Machine learning classification model predicting mental health treatment
+          needs with feature engineering and model evaluation.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Machine Learning</span>
+          <span class="tech-tag">Classification</span>
+          <span class="tech-tag">Scikit-Learn</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/Mental-Health-Treatment-Prediction" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-  <!-- ─── PARTICLE + SCROLL SCRIPT ──────────────────────────── -->
-  <script>
-    // Particle Background
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
+    <!-- Time Series Forecasting -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">Time Series Forecasting</h3>
+        <p class="project-desc">
+          Forecasting trends using statistical and ML models including ARIMA
+          and Prophet with performance comparison.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Time Series</span>
+          <span class="tech-tag">ARIMA</span>
+          <span class="tech-tag">Prophet</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/Time%20Series%20Forecasting" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-    let w, h;
-    function resizeCanvas() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    <!-- Student Stress Risk Prediction -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">Student Stress Risk Prediction</h3>
+        <p class="project-desc">
+          Predictive ML system identifying high-risk students based on academic
+          and behavioral patterns.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">ML</span>
+          <span class="tech-tag">Prediction</span>
+          <span class="tech-tag">Data Analysis</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/student_stress_risk_prediction" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-    const particlesArray = [];
-    const particleCount = 80;
-    const mouse = { x: null, y: null, radius: 130 };
+    <!-- AI Agents -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">AI Agents Automation System</h3>
+        <p class="project-desc">
+          Custom AI agent workflow system enabling automated task execution
+          and intelligent processing pipelines.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">AI Agents</span>
+          <span class="tech-tag">Automation</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/AI_Agents" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-    window.addEventListener('mousemove', e => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-    });
+    <!-- Resume Screening System -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">AI Resume Screening System</h3>
+        <p class="project-desc">
+          NLP-based resume ranking and filtering tool improving recruitment efficiency.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">Text Processing</span>
+          <span class="tech-tag">Scikit-Learn</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/PyAI_Hub/blob/main/PyAIHubProjects/resume_screeening_system.py" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.size = Math.random() * 2.8 + 0.7;
-        this.speedX = Math.random() * 0.7 - 0.35;
-        this.speedY = Math.random() * 0.7 - 0.35;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x > w || this.x < 0) this.speedX *= -1;
-        if (this.y > h || this.y < 0) this.speedY *= -1;
+    <!-- Hotel Booking Cleaner -->
+    <div class="project-card reveal">
+      <div class="project-header">
+        <h3 class="project-title">Hotel Booking Data Cleaner</h3>
+        <p class="project-desc">
+          Data preprocessing pipeline handling missing values, duplicates
+          and inconsistent records for production-ready datasets.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Data Cleaning</span>
+          <span class="tech-tag">Pandas</span>
+          <span class="tech-tag">EDA</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="https://github.com/athulyaesther777/PyAI_Hub/tree/main/PyAIHubProjects/hotel-booking-data-cleaner" class="project-link" target="_blank">
+          <i class="bi bi-github"></i> Source Code
+        </a>
+      </div>
+    </div>
 
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx*dx + dy*dy);
-        if (distance < mouse.radius) {
-          let force = (mouse.radius - distance) / mouse.radius;
-          this.x -= dx * force * 0.09;
-          this.y -= dy * force * 0.09;
-        }
-      }
-      draw() {
-        ctx.fillStyle = 'rgba(96, 165, 250, 0.65)';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-
-        for (let i = 0; i < particlesArray.length; i++) {
-          let p = particlesArray[i];
-          let dx = this.x - p.x;
-          let dy = this.y - p.y;
-          let dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 130) {
-            ctx.strokeStyle = `rgba(96, 165, 250, ${1 - dist/130})`;
-            ctx.lineWidth = 0.7;
-            ctx.beginPath();
-            ctx.moveTo(this.x, this.y);
-            ctx.lineTo(p.x, p.y);
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    for (let i = 0; i < particleCount; i++) {
-      particlesArray.push(new Particle());
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, w, h);
-      particlesArray.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-
-    // Scroll & Reveal
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(anchor.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+  </div>
+</section>
