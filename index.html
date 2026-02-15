@@ -3,147 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Athulya Esther | Data Strategy Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <title>Athulya Esther | Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
-    :root {
-      --accent: #3b82f6;
-      --accent-glow: rgba(59, 130, 246, 0.5);
-      --glass: rgba(15, 23, 42, 0.7);
-      --glass-border: rgba(255, 255, 255, 0.1);
-    }
-
+    /* ─── BASE STYLES ─── */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #060910;
-      color: #f1f5f9;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0e17; /* Deep midnight base */
+      color: #e2e8f0;
       line-height: 1.6;
+      min-height: 100vh;
       overflow-x: hidden;
-    }
-
-    #particles { position: fixed; inset: 0; z-index: -1; }
-
-    /* ─── SIDE NAVIGATION (DASHBOARD STYLE) ─── */
-    nav {
-      position: fixed;
-      left: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      padding: 2rem 1rem;
-      border-radius: 100px;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      box-shadow: 0 0 40px rgba(0,0,0,0.5);
-    }
-    nav a {
-      color: #94a3b8;
-      font-size: 1.4rem;
-      transition: all 0.3s;
       position: relative;
     }
-    nav a:hover, nav a.active { color: var(--accent); transform: scale(1.2); }
-    
-    /* ─── HERO ─── */
-    .main-content { margin-left: 8rem; padding-right: 5%; }
-    
+
+    /* ─── ANIME CINEMATIC OVERLAYS ─── */
+    #particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ─── KEYFRAMES ─── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes softGlow {
+      0%, 100% { filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.2)); }
+      50% { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5)); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: rgba(10, 14, 23, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      z-index: 1000;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav h2 { font-size: 1.4rem; color: #3b82f6; font-weight: 700; }
+    nav ul { display: flex; gap: 2rem; list-style: none; }
+    nav a { text-decoration: none; color: #94a3b8; font-size: 0.9rem; transition: 0.3s; }
+    nav a:hover { color: #3b82f6; }
+
+    /* ─── HERO SECTION ─── */
     .hero {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 2rem;
-    }
-    .hero-badge {
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      width: fit-content;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 1.5rem;
+      align-items: center;
+      text-align: center;
+      padding: 0 10%;
     }
     .hero h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-size: clamp(2.5rem, 8vw, 5rem);
       font-weight: 800;
-      line-height: 1.1;
+      color: #fff;
       margin-bottom: 1rem;
+      animation: softGlow 4s infinite;
     }
-    .hero h1 span { color: var(--accent); }
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #94a3b8;
       max-width: 600px;
-      margin-bottom: 2.5rem;
     }
 
-    /* ─── Bento Grid Sections ─── */
-    section { padding: 100px 0; min-height: 100vh; }
-    .section-header { margin-bottom: 4rem; }
-    .section-header h2 { font-size: 3rem; font-weight: 700; }
-    
-    .glass-card {
-      background: var(--glass);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 2.5rem;
-      transition: all 0.4s ease;
+    /* ─── NEW LAYOUT: SECTIONING ─── */
+    section {
+      padding: 100px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    .glass-card:hover { border-color: var(--accent); box-shadow: 0 10px 40px rgba(59,130,246,0.15); }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: left;
+      color: #3b82f6;
+      border-left: 4px solid #3b82f6;
+      padding-left: 20px;
+    }
 
-    /* ─── Projects Grid ─── */
+    /* ─── SKILLS LAYOUT: FLEX CARDS ─── */
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .skill-box {
+      flex: 1 1 300px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+    .skill-box:hover {
+      background: rgba(59, 130, 246, 0.05);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+    .skill-box h3 { margin-bottom: 20px; color: #93c5fd; display: flex; align-items: center; gap: 10px; }
+
+    /* ─── PROJECTS LAYOUT: STAGGERED 9:16 GRID ─── */
     .projects-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 40px;
+      align-items: start;
     }
-    .project-card { position: relative; overflow: hidden; height: 100%; }
-    .project-card .iframe-preview {
+    .project-card {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: #3b82f6;
+    }
+    .demo-container {
       width: 100%;
-      height: 300px;
-      border-radius: 12px;
-      border: none;
-      margin-top: 1.5rem;
+      height: 500px; /* Emphasizing 9:16 vertical ratio */
       background: #000;
+      position: relative;
     }
+    .demo-iframe { width: 100%; height: 100%; border: none; }
+    
+    .project-info {
+      padding: 25px;
+    }
+    .tech-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
     .tech-tag {
-      background: rgba(255,255,255,0.05);
-      padding: 0.3rem 0.8rem;
-      border-radius: 6px;
       font-size: 0.75rem;
-      margin-right: 0.5rem;
+      background: rgba(59, 130, 246, 0.1);
+      color: #60a5fa;
+      padding: 4px 12px;
+      border-radius: 100px;
     }
 
-    /* ─── Custom Buttons ─── */
-    .cta-btn {
-      background: var(--accent);
+    /* ─── BUTTONS & CONTACT ─── */
+    .btn {
+      display: inline-block;
+      padding: 12px 35px;
+      background: #3b82f6;
       color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 12px;
+      border-radius: 100px;
       text-decoration: none;
       font-weight: 600;
-      width: fit-content;
       transition: 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      margin-top: 20px;
     }
-    .cta-btn:hover { background: #2563eb; transform: translateY(-3px); }
+    .btn:hover { background: #2563eb; transform: scale(1.05); }
 
-    @media (max-width: 1024px) {
-      nav { bottom: 2rem; top: auto; left: 50%; transform: translateX(-50%); flex-direction: row; }
-      .main-content { margin-left: 0; padding: 0 5%; }
-      .projects-container { grid-template-columns: 1fr; }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 1.5rem;
+    }
+    .social-links a { color: #94a3b8; transition: 0.3s; }
+    .social-links a:hover { color: #3b82f6; }
+
+    footer {
+      padding: 50px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    /* ─── MOBILE OPTIMIZATION ─── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .section-title { font-size: 2rem; }
+      .demo-container { height: 400px; }
     }
   </style>
 </head>
@@ -152,77 +214,156 @@
   <canvas id="particles"></canvas>
 
   <nav>
-    <a href="#home" title="Home"><i class="bi bi-house-door"></i></a>
-    <a href="#about" title="About"><i class="bi bi-person"></i></a>
-    <a href="#skills" title="Skills"><i class="bi bi-cpu"></i></a>
-    <a href="#projects" title="Projects"><i class="bi bi-grid"></i></a>
-    <a href="#contact" title="Contact"><i class="bi bi-chat-dots"></i></a>
+    <h2>Athulya Esther</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <div class="main-content">
-    <section class="hero" id="home">
-      <div class="hero-badge reveal">Available for Ireland Internships</div>
-      <h1 class="reveal">Athulya <span>Esther.</span></h1>
-      <p class="reveal reveal-delay-1">Strategic Data Analyst specializing in Python, Machine Learning, and translating complex data into business growth.</p>
-      <div class="reveal reveal-delay-2">
-        <a href="#projects" class="cta-btn">Explore Workspace <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </section>
+  <section class="hero" id="home">
+    <div class="reveal">
+      <h1>Data Analyst</h1>
+      <p>Transforming raw datasets into emotional stories through data visualization and predictive modeling.</p>
+      <a href="#projects" class="btn">Explore My Work</a>
+    </div>
+  </section>
 
-    <section id="about">
-      <div class="glass-card reveal">
-        <div class="section-header">
-          <h2>01. Background</h2>
+  <section id="about" class="reveal">
+    <h2 class="section-title">The Vision</h2>
+    <p style="max-width: 800px; font-size: 1.1rem; color: #cbd5e1;">
+      With a foundation in Computer Science and a passion for Business Analytics, I bridge the gap between technical complexity and strategic decision-making. [cite_start]I specialize in end-to-end analysis pipelines—building the tools that turn data into direction. [cite: 7, 9]
+    </p>
+  </section>
+
+  <section id="skills" class="reveal">
+    <h2 class="section-title">Technical Mastery</h2>
+    <div class="skills-wrapper">
+      <div class="skill-box">
+        <h3><i class="bi bi-terminal"></i> Core Dev</h3>
+        [cite_start]<p>Python (Pandas, NumPy), SQL (Joins, CTEs), and Database Management with SQLite. [cite: 12, 15]</p>
+      </div>
+      <div class="skill-box">
+        <h3><i class="bi bi-graph-up"></i> Analytics</h3>
+        [cite_start]<p>Statistical EDA, Time Series Forecasting (ARIMA, Prophet), and ML Classification. [cite: 12, 14]</p>
+      </div>
+      <div class="skill-box">
+        <h3><i class="bi bi-cpu"></i> Engineering</h3>
+        [cite_start]<p>Automated workflows, Feature Engineering (+20% reliability), and Git version control. [cite: 22, 29, 30]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Featured Works</h2>
+    <div class="projects-container">
+      
+      <div class="project-card reveal">
+        <div class="demo-container">
+          <iframe class="demo-iframe" src="https://household-power-consumption-mlbranchm-wedijzygvfuzjdug7xg8bs.streamlit.app/?embed=true"></iframe>
         </div>
-        <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 800px;">
-          I bridge the gap between technical data engineering and executive decision-making. 
-          With a B.Tech in Computer Science and a Google Data Analytics certification, 
-          I build automated pipelines that reveal the "why" behind the numbers.
-        </p>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-header">
-        <h2>02. Featured Analysis</h2>
-      </div>
-      <div class="projects-container">
-        <div class="glass-card project-card reveal">
-          <div class="hero-badge">Forecasting</div>
-          <h3>Energy Consumption ML</h3>
-          <p>Prophet & LSTM models predicting demand trends.</p>
-          <iframe class="iframe-preview" src="https://household-power-consumption-mlbranchm-wedijzygvfuzjdug7xg8bs.streamlit.app/?embed=true"></iframe>
-          <div style="margin-top:1rem">
-            <span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span>
+        <div class="project-info">
+          <h3>Power Consumption Forecasting</h3>
+          <p>Predictive time-series modeling with a real-time Streamlit interface.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">LSTM</span>
+            <span class="tech-tag">Prophet</span>
+            <span class="tech-tag">Streamlit</span>
           </div>
         </div>
+      </div>
 
-        <div class="glass-card project-card reveal reveal-delay-1">
-          <div class="hero-badge">Business Intelligence</div>
-          <h3>Strategic Hotel Analytics</h3>
-          <p>Decoding 100k+ records to optimize revenue.</p>
-          <div style="height:300px; background: rgba(0,0,0,0.3); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-             <i class="bi bi-graph-up" style="font-size: 4rem; color: var(--accent);"></i>
-          </div>
-          <div style="margin-top:1rem">
-            <span class="tech-tag">SQL</span><span class="tech-tag">Pandas</span><span class="tech-tag">Plotly</span>
+      <div class="project-card reveal">
+        <div class="demo-container">
+          <iframe class="demo-iframe" src="https://faithverse-bible-app-dig2cazesdbpxfqpjfkkt5.streamlit.app/?embed=true"></iframe>
+        </div>
+        <div class="project-info">
+          <h3>Faithverse Application</h3>
+          [cite_start]<p>Database-driven Bible app featuring dynamic search and structured retrieval. [cite: 51, 52]</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Streamlit</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="contact">
-        <div class="glass-card reveal" style="text-align: center;">
-            <h2>Let's Build Something Smarter</h2>
-            <p>Currently seeking Data Analyst opportunities in Ireland.</p>
-            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; font-size: 2rem;">
-                <a href="https://linkedin.com/in/athulya-b-vijay-b65740220" style="color:white"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/athulyaesther777" style="color:white"><i class="bi bi-github"></i></a>
-                <a href="mailto:athulyaestherlucky75@gmail.com" style="color:white"><i class="bi bi-envelope"></i></a>
-            </div>
+      <div class="project-card reveal" style="background: linear-gradient(180deg, rgba(59, 130, 246, 0.1), transparent);">
+        <div class="project-info" style="padding: 60px 25px;">
+          <h3>Hotel Booking KPI Engine</h3>
+          [cite_start]<p>Cleaned 100k+ records to identify seasonal demand patterns and cancellation drivers. [cite: 37, 38, 39]</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Data Cleaning</span>
+            <span class="tech-tag">EDA</span>
+            <span class="tech-tag">Business IQ</span>
+          </div>
+          <a href="https://github.com/athulyaesther777" class="btn" style="background: transparent; border: 1px solid #3b82f6;">Source Code</a>
         </div>
-    </section>
-  </div>
+      </div>
 
-  </body>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal" style="text-align: center;">
+    <h2 class="section-title" style="text-align: center; border: none;">Get In Touch</h2>
+    <div class="social-links">
+      <a href="https://github.com/athulyaesther777"><i class="bi bi-github"></i></a>
+      <a href="https://linkedin.com/in/athulya-b-vijay"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:athulyaestherlucky75@gmail.com"><i class="bi bi-envelope-heart"></i></a>
+    </div>
+    <a href="Athulya_Esther.pdf" download class="btn">Download CV</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Athulya Esther • Built for the future of data.</p>
+  </footer>
+
+  <script>
+    // Simple reveal logic
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Particle Background Logic (simplified for layout focus)
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class P {
+      constructor() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.s = Math.random() * 2;
+        this.vx = Math.random() * 0.5 - 0.25;
+        this.vy = Math.random() * 0.5 - 0.25;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(59, 130, 246, 0.3)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.s, 0, Math.PI*2);
+        ctx.fill();
+        this.x += this.vx; this.y += this.vy;
+        if(this.x<0||this.x>w) this.vx*=-1;
+        if(this.y<0||this.y>h) this.vy*=-1;
+      }
+    }
+    const ps = Array.from({length: 50}, () => new P());
+    function anim() {
+      ctx.clearRect(0,0,w,h);
+      ps.forEach(p => p.draw());
+      requestAnimationFrame(anim);
+    }
+    anim();
+  </script>
+</body>
 </html>
